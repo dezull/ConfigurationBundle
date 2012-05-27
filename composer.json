@@ -1,0 +1,31 @@
+{
+    "name": "openify/configuration-bundle",
+    "type": "symfony-bundle",
+    "description": "A Bundle which allow you to easily store and manage your application configuration",
+    "keywords": ["configuration", "symfony2", "bundle", "openify"],
+    "homepage": "http://github.com/openify/ConfigurationBundle",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Bertrand ZUCHUAT"
+        },
+        {
+            "name": "Sylvain WITMEYER"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Openify\\Bundle\\ConfiguratioBundle": ""
+        }
+    },
+
+    "target-dir": "Openify/Bundle/ConfigurationBundle"
+}
+
