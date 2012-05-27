@@ -22,7 +22,7 @@
 
     "autoload": {
         "psr-0": {
-            "Openify\\Bundle\\ConfiguratioBundle": ""
+            "Openify\\Bundle\\ConfigurationBundle": ""
         }
     },
 
