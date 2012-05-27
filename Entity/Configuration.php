@@ -1,7 +1,6 @@
 <?php
 
 namespace Openify\Bundle\ConfigurationBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,18 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Configuration
 {
     /**
-     * @var integer $id
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=128, unique=true)
+     * @ORM\Id
      */
     private $name;
 
@@ -34,16 +25,6 @@ class Configuration
      * @ORM\Column(name="value", type="text", nullable=true)
      */
     private $value;
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set name
