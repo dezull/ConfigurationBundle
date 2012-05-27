@@ -4,17 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="openify_configuration.example.class">Openify\Bundle\ConfigurationBundle\Example</parameter>
+        <parameter key="openify.configuration_manager.class">Openify\Bundle\ConfigurationBundle\Entity\Manager\ConfigurationManager</parameter>
     </parameters>
 
     <services>
-        <service id="openify_configuration.example" class="%openify_configuration.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="openify.configuration" class="%openify.configuration_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
     </services>
-    -->
 </container>
