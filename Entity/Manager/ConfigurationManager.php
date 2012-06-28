@@ -43,14 +43,15 @@ class ConfigurationManager extends BaseManager
      * @param string $key   Unique key
      * @param mixed  $value A value
      * @access public
-     * @return void
+     * @return ConfigurationManager
      */
     public function set($key, $value)
     {
-        if ($config = $this->get($key)) {
+        if ($config = $this->getRepository()->find($key)) {
             $config->setValue($value);
             $this->em->persist($config);
             $this->em->flush();
+			return $this;
         } else {
             throw new ConfigurationException(
                     sprintf("The key %s doesn't exist", $key));
@@ -67,7 +68,7 @@ class ConfigurationManager extends BaseManager
     public function get($key)
     {
         if ($config = $this->getRepository()->find($key)) {
-            return $config;
+            return $config->getValue();
         } else {
             throw new ConfigurationException(
                     sprintf("The key %s doesn't exist", $key));

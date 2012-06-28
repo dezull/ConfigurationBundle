@@ -6,11 +6,19 @@
 
     <parameters>
         <parameter key="openify.configuration_manager.class">Openify\Bundle\ConfigurationBundle\Entity\Manager\ConfigurationManager</parameter>
+        <parameter key="openify.configuration_manager.twig_extension.class">Openify\Bundle\ConfigurationBundle\Twig\ConfigurationExtension</parameter>        
     </parameters>
 
     <services>
         <service id="openify.configuration" class="%openify.configuration_manager.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
+
+        <service id="openify.configuration.twig_extension" class="%openify.configuration_manager.twig_extension.class%" public="false">
+            <tag name="twig.extension" />
+            <argument type="service" id="openify.configuration" />
+        </service>
+
+        
     </services>
 </container>
